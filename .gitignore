@@ -1,0 +1,17 @@
+# Spin generated verifier files
+pan
+pan.*
+*.trail
+_spin_nvr.tmp
+
+# Build artifacts
+build/
+*.o
+*.out
+*.exe
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+

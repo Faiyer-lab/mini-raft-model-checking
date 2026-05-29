@@ -1,0 +1,34 @@
+
+(Spin Version 6.5.2 -- 6 December 2019)
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	+ (no_two_leaders)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 64 byte, depth reached 100, errors: 0
+      196 states, stored
+       51 states, matched
+      247 transitions (= stored+matched)
+      917 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.017	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.284	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  128.730	total actual memory usage
+
+
+unreached in proctype Node
+	(0 of 46 states)
+unreached in init
+	(0 of 19 states)
+unreached in claim no_two_leaders
+	_spin_nvr.tmp:8, state 10, "-end-"
+	(1 of 10 states)
+
+pan: elapsed time 0 seconds
