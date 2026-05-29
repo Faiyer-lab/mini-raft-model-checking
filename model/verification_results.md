@@ -118,3 +118,44 @@ The counterexample shows that the one-vote-per-term rule is necessary for the sa
 
 - Verification output: `results/faulty_vote_counterexample_v01.txt`
 - Detailed trace: `results/traces/faulty_vote_counterexample_trace_v01.txt`
+
+---
+
+## Message-passing model v0.2
+
+File: `model/mini_raft_messages.pml`
+
+This model refines the original bounded leader-election abstraction by introducing explicit message passing.
+
+Compared with model v0.1, this version includes:
+
+- one inbox channel per node;
+- explicit `RequestVote` messages;
+- explicit `VoteGranted` messages;
+- asynchronous interleavings of node actions;
+- the same one-vote-per-term rule;
+- the same majority-based leadership rule.
+
+### Checked property
+
+LTL property:
+
+`ltl no_two_leaders { [] (!two_leaders_same_term) }`
+
+### Result
+
+Spin completed the full state-space search with no errors.
+
+Important output:
+
+- `State-vector 168 byte, depth reached 160, errors: 0`
+- `78812 states, stored`
+- `101106 states, matched`
+- `179918 transitions (= stored+matched)`
+- `157650 atomic steps`
+
+### Interpretation
+
+Within the bounded message-passing abstraction of model v0.2, Spin did not find any execution in which two different nodes become leaders in the same term.
+
+This strengthens the previous result because voting is no longer represented as a direct procedure call inside the election step. Instead, vote requests and granted votes are exchanged through explicit per-node inbox channels.
