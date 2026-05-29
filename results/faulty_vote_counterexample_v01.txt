@@ -1,0 +1,30 @@
+pan:1: assertion violated  !( !( !(two_leaders_same_term))) (at depth 46)
+pan: wrote mini_raft_faulty_vote.pml.trail
+
+(Spin Version 6.5.2 -- 6 December 2019)
+Warning: Search not completed
+	+ Partial Order Reduction
+
+Full statespace search for:
+	never claim         	+ (no_two_leaders)
+	assertion violations	+ (if within scope of claim)
+	acceptance   cycles 	+ (fairness disabled)
+	invalid end states	- (disabled by never claim)
+
+State-vector 64 byte, depth reached 46, errors: 1
+       11 states, stored
+        0 states, matched
+       11 transitions (= stored+matched)
+       26 atomic steps
+hash conflicts:         0 (resolved)
+
+Stats on memory usage (in Megabytes):
+    0.001	equivalent memory usage for states (stored*(State-vector + overhead))
+    0.284	actual memory usage for states
+  128.000	memory used for hash table (-w24)
+    0.534	memory used for DFS stack (-m10000)
+  128.730	total actual memory usage
+
+
+
+pan: elapsed time 0 seconds

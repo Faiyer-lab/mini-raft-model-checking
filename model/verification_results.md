@@ -75,3 +75,46 @@ This result does not yet prove correctness of a complete Raft protocol. In parti
 - liveness properties.
 
 These aspects are addressed in later model versions.
+
+---
+
+## Faulty voting model v0.1
+
+File: `model/mini_raft_faulty_vote.pml`
+
+This model intentionally removes the one-vote-per-term restriction. In the correct model, a node grants a vote only when `votedFor[id] == NONE`. In the faulty model, this guard is replaced by `true`, allowing repeated votes in the same term.
+
+### Checked property
+
+LTL property:
+
+`ltl no_two_leaders { [] (!two_leaders_same_term) }`
+
+### Result
+
+Spin finds a counterexample.
+
+Important output:
+
+- `errors: 1`
+- `assertion violated`
+- `two_leaders_same_term = 1`
+
+### Counterexample interpretation
+
+The final state of the trace contains:
+
+- `role[1] = Leader`;
+- `role[2] = Leader`;
+- `currentTerm[1] = 3`;
+- `currentTerm[2] = 3`;
+- `two_leaders_same_term = 1`.
+
+This means that two different nodes become leaders in the same term.
+
+The counterexample shows that the one-vote-per-term rule is necessary for the safety property. If nodes can vote repeatedly in the same term, two candidates can both collect a majority and become leaders simultaneously.
+
+### Stored artifacts
+
+- Verification output: `results/faulty_vote_counterexample_v01.txt`
+- Detailed trace: `results/traces/faulty_vote_counterexample_trace_v01.txt`

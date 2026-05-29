@@ -1,0 +1,388 @@
+ltl no_two_leaders: [] (! (two_leaders_same_term))
+starting claim 2
+Never claim moves to line 4	[(1)]
+  2:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:119 (state 1)	[i = 0]
+		:init:(0):i = 0
+  3:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:120 (state 2)	[((i<3))]
+  3:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:121 (state 3)	[role[i] = Follower]
+		role[0] = 3
+		role[1] = 0
+		role[2] = 0
+  3:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:122 (state 4)	[currentTerm[i] = 0]
+		role[0] = 3
+		role[1] = 0
+		role[2] = 0
+  3:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:123 (state 5)	[votedFor[i] = 255]
+		role[0] = 3
+		role[1] = 0
+		role[2] = 0
+		votedFor[0] = 255
+		votedFor[1] = 0
+		votedFor[2] = 0
+  3:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:124 (state 6)	[votesReceived[i] = 0]
+		role[0] = 3
+		role[1] = 0
+		role[2] = 0
+		votedFor[0] = 255
+		votedFor[1] = 0
+		votedFor[2] = 0
+  3:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:125 (state 7)	[i = (i+1)]
+		role[0] = 3
+		role[1] = 0
+		role[2] = 0
+		votedFor[0] = 255
+		votedFor[1] = 0
+		votedFor[2] = 0
+		:init:(0):i = 1
+  4:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:120 (state 2)	[((i<3))]
+  4:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:121 (state 3)	[role[i] = Follower]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 0
+  4:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:122 (state 4)	[currentTerm[i] = 0]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 0
+  4:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:123 (state 5)	[votedFor[i] = 255]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 0
+		votedFor[0] = 255
+		votedFor[1] = 255
+		votedFor[2] = 0
+  4:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:124 (state 6)	[votesReceived[i] = 0]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 0
+		votedFor[0] = 255
+		votedFor[1] = 255
+		votedFor[2] = 0
+  4:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:125 (state 7)	[i = (i+1)]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 0
+		votedFor[0] = 255
+		votedFor[1] = 255
+		votedFor[2] = 0
+		:init:(0):i = 2
+  5:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:120 (state 2)	[((i<3))]
+  5:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:121 (state 3)	[role[i] = Follower]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 3
+  5:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:122 (state 4)	[currentTerm[i] = 0]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 3
+  5:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:123 (state 5)	[votedFor[i] = 255]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 3
+		votedFor[0] = 255
+		votedFor[1] = 255
+		votedFor[2] = 255
+  5:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:124 (state 6)	[votesReceived[i] = 0]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 3
+		votedFor[0] = 255
+		votedFor[1] = 255
+		votedFor[2] = 255
+  5:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:125 (state 7)	[i = (i+1)]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 3
+		votedFor[0] = 255
+		votedFor[1] = 255
+		votedFor[2] = 255
+		:init:(0):i = 3
+  6:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:126 (state 8)	[else]
+  7:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:37 (state 13)	[two_leaders_same_term = (((((role[0]==Leader)&&(role[1]==Leader))&&(currentTerm[0]==currentTerm[1]))||(((role[0]==Leader)&&(role[2]==Leader))&&(currentTerm[0]==currentTerm[2])))||(((role[1]==Leader)&&(role[2]==Leader))&&(currentTerm[1]==currentTerm[2])))]
+Starting Node with pid 2
+  8:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:131 (state 15)	[(run Node(0))]
+Starting Node with pid 3
+  9:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:132 (state 16)	[(run Node(1))]
+Starting Node with pid 4
+ 10:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:133 (state 17)	[(run Node(2))]
+ 12:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:99 (state 1)	[((attempts<2))]
+ 14:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:99 (state 1)	[((attempts<2))]
+ 16:	proc  1 (Node:1) model/mini_raft_faulty_vote.pml:99 (state 1)	[((attempts<2))]
+ 18:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:51 (state 2)	[role[id] = Candidate]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 2
+ 18:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:52 (state 3)	[currentTerm[id] = (currentTerm[id]+1)]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 2
+		currentTerm[0] = 0
+		currentTerm[1] = 0
+		currentTerm[2] = 1
+ 18:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:53 (state 4)	[votedFor[id] = id]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 2
+		currentTerm[0] = 0
+		currentTerm[1] = 0
+		currentTerm[2] = 1
+		votedFor[0] = 255
+		votedFor[1] = 255
+		votedFor[2] = 2
+ 18:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:54 (state 5)	[votesReceived[id] = 1]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 2
+		currentTerm[0] = 0
+		currentTerm[1] = 0
+		currentTerm[2] = 1
+		votedFor[0] = 255
+		votedFor[1] = 255
+		votedFor[2] = 2
+		votesReceived[0] = 0
+		votesReceived[1] = 0
+		votesReceived[2] = 1
+ 19:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:57 (state 6)	[((((id!=0)&&(currentTerm[0]<=currentTerm[id]))&&1))]
+ 19:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:58 (state 7)	[currentTerm[0] = currentTerm[id]]
+		currentTerm[0] = 1
+		currentTerm[1] = 0
+		currentTerm[2] = 1
+ 19:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:59 (state 8)	[votedFor[0] = id]
+		currentTerm[0] = 1
+		currentTerm[1] = 0
+		currentTerm[2] = 1
+		votedFor[0] = 2
+		votedFor[1] = 255
+		votedFor[2] = 2
+ 19:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:60 (state 9)	[votesReceived[id] = (votesReceived[id]+1)]
+		currentTerm[0] = 1
+		currentTerm[1] = 0
+		currentTerm[2] = 1
+		votedFor[0] = 2
+		votedFor[1] = 255
+		votedFor[2] = 2
+		votesReceived[0] = 0
+		votesReceived[1] = 0
+		votesReceived[2] = 2
+ 20:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:65 (state 14)	[((((id!=1)&&(currentTerm[1]<=currentTerm[id]))&&1))]
+ 20:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:66 (state 15)	[currentTerm[1] = currentTerm[id]]
+		currentTerm[0] = 1
+		currentTerm[1] = 1
+		currentTerm[2] = 1
+ 20:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:67 (state 16)	[votedFor[1] = id]
+		currentTerm[0] = 1
+		currentTerm[1] = 1
+		currentTerm[2] = 1
+		votedFor[0] = 2
+		votedFor[1] = 2
+		votedFor[2] = 2
+ 20:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:68 (state 17)	[votesReceived[id] = (votesReceived[id]+1)]
+		currentTerm[0] = 1
+		currentTerm[1] = 1
+		currentTerm[2] = 1
+		votedFor[0] = 2
+		votedFor[1] = 2
+		votedFor[2] = 2
+		votesReceived[0] = 0
+		votesReceived[1] = 0
+		votesReceived[2] = 3
+ 21:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:77 (state 26)	[else]
+ 22:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:77 (state 27)	[(1)]
+ 23:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:81 (state 30)	[((votesReceived[id]>=2))]
+ 23:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:82 (state 31)	[role[id] = Leader]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 1
+ 24:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:37 (state 36)	[two_leaders_same_term = (((((role[0]==Leader)&&(role[1]==Leader))&&(currentTerm[0]==currentTerm[1]))||(((role[0]==Leader)&&(role[2]==Leader))&&(currentTerm[0]==currentTerm[2])))||(((role[1]==Leader)&&(role[2]==Leader))&&(currentTerm[1]==currentTerm[2])))]
+ 24:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:102 (state 39)	[attempts = (attempts+1)]
+		Node(3):attempts = 1
+ 26:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:99 (state 1)	[((attempts<2))]
+ 28:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:51 (state 2)	[role[id] = Candidate]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 2
+ 28:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:52 (state 3)	[currentTerm[id] = (currentTerm[id]+1)]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 2
+		currentTerm[0] = 1
+		currentTerm[1] = 1
+		currentTerm[2] = 2
+ 28:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:53 (state 4)	[votedFor[id] = id]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 2
+		currentTerm[0] = 1
+		currentTerm[1] = 1
+		currentTerm[2] = 2
+ 28:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:54 (state 5)	[votesReceived[id] = 1]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 2
+		currentTerm[0] = 1
+		currentTerm[1] = 1
+		currentTerm[2] = 2
+		votesReceived[0] = 0
+		votesReceived[1] = 0
+		votesReceived[2] = 1
+ 29:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:57 (state 6)	[((((id!=0)&&(currentTerm[0]<=currentTerm[id]))&&1))]
+ 29:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:58 (state 7)	[currentTerm[0] = currentTerm[id]]
+		currentTerm[0] = 2
+		currentTerm[1] = 1
+		currentTerm[2] = 2
+ 29:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:59 (state 8)	[votedFor[0] = id]
+		currentTerm[0] = 2
+		currentTerm[1] = 1
+		currentTerm[2] = 2
+ 29:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:60 (state 9)	[votesReceived[id] = (votesReceived[id]+1)]
+		currentTerm[0] = 2
+		currentTerm[1] = 1
+		currentTerm[2] = 2
+		votesReceived[0] = 0
+		votesReceived[1] = 0
+		votesReceived[2] = 2
+ 30:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:65 (state 14)	[((((id!=1)&&(currentTerm[1]<=currentTerm[id]))&&1))]
+ 30:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:66 (state 15)	[currentTerm[1] = currentTerm[id]]
+		currentTerm[0] = 2
+		currentTerm[1] = 2
+		currentTerm[2] = 2
+ 30:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:67 (state 16)	[votedFor[1] = id]
+		currentTerm[0] = 2
+		currentTerm[1] = 2
+		currentTerm[2] = 2
+ 30:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:68 (state 17)	[votesReceived[id] = (votesReceived[id]+1)]
+		currentTerm[0] = 2
+		currentTerm[1] = 2
+		currentTerm[2] = 2
+		votesReceived[0] = 0
+		votesReceived[1] = 0
+		votesReceived[2] = 3
+ 31:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:77 (state 26)	[else]
+ 32:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:77 (state 27)	[(1)]
+ 33:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:81 (state 30)	[((votesReceived[id]>=2))]
+ 33:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:82 (state 31)	[role[id] = Leader]
+		role[0] = 3
+		role[1] = 3
+		role[2] = 1
+ 34:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:37 (state 36)	[two_leaders_same_term = (((((role[0]==Leader)&&(role[1]==Leader))&&(currentTerm[0]==currentTerm[1]))||(((role[0]==Leader)&&(role[2]==Leader))&&(currentTerm[0]==currentTerm[2])))||(((role[1]==Leader)&&(role[2]==Leader))&&(currentTerm[1]==currentTerm[2])))]
+ 34:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:102 (state 39)	[attempts = (attempts+1)]
+		Node(3):attempts = 2
+ 36:	proc  3 (Node:1) model/mini_raft_faulty_vote.pml:104 (state 41)	[else]
+ 38: proc 3 terminates
+ 40:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:51 (state 2)	[role[id] = Candidate]
+		role[0] = 3
+		role[1] = 2
+		role[2] = 1
+ 40:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:52 (state 3)	[currentTerm[id] = (currentTerm[id]+1)]
+		role[0] = 3
+		role[1] = 2
+		role[2] = 1
+		currentTerm[0] = 2
+		currentTerm[1] = 3
+		currentTerm[2] = 2
+ 40:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:53 (state 4)	[votedFor[id] = id]
+		role[0] = 3
+		role[1] = 2
+		role[2] = 1
+		currentTerm[0] = 2
+		currentTerm[1] = 3
+		currentTerm[2] = 2
+		votedFor[0] = 2
+		votedFor[1] = 1
+		votedFor[2] = 2
+ 40:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:54 (state 5)	[votesReceived[id] = 1]
+		role[0] = 3
+		role[1] = 2
+		role[2] = 1
+		currentTerm[0] = 2
+		currentTerm[1] = 3
+		currentTerm[2] = 2
+		votedFor[0] = 2
+		votedFor[1] = 1
+		votedFor[2] = 2
+		votesReceived[0] = 0
+		votesReceived[1] = 1
+		votesReceived[2] = 3
+ 41:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:57 (state 6)	[((((id!=0)&&(currentTerm[0]<=currentTerm[id]))&&1))]
+ 41:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:58 (state 7)	[currentTerm[0] = currentTerm[id]]
+		currentTerm[0] = 3
+		currentTerm[1] = 3
+		currentTerm[2] = 2
+ 41:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:59 (state 8)	[votedFor[0] = id]
+		currentTerm[0] = 3
+		currentTerm[1] = 3
+		currentTerm[2] = 2
+		votedFor[0] = 1
+		votedFor[1] = 1
+		votedFor[2] = 2
+ 41:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:60 (state 9)	[votesReceived[id] = (votesReceived[id]+1)]
+		currentTerm[0] = 3
+		currentTerm[1] = 3
+		currentTerm[2] = 2
+		votedFor[0] = 1
+		votedFor[1] = 1
+		votedFor[2] = 2
+		votesReceived[0] = 0
+		votesReceived[1] = 2
+		votesReceived[2] = 3
+ 42:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:69 (state 18)	[else]
+ 43:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:69 (state 19)	[(1)]
+ 44:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:73 (state 22)	[((((id!=2)&&(currentTerm[2]<=currentTerm[id]))&&1))]
+ 44:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:74 (state 23)	[currentTerm[2] = currentTerm[id]]
+		currentTerm[0] = 3
+		currentTerm[1] = 3
+		currentTerm[2] = 3
+ 44:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:75 (state 24)	[votedFor[2] = id]
+		currentTerm[0] = 3
+		currentTerm[1] = 3
+		currentTerm[2] = 3
+		votedFor[0] = 1
+		votedFor[1] = 1
+		votedFor[2] = 1
+ 44:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:76 (state 25)	[votesReceived[id] = (votesReceived[id]+1)]
+		currentTerm[0] = 3
+		currentTerm[1] = 3
+		currentTerm[2] = 3
+		votedFor[0] = 1
+		votedFor[1] = 1
+		votedFor[2] = 1
+		votesReceived[0] = 0
+		votesReceived[1] = 3
+		votesReceived[2] = 3
+ 45:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:81 (state 30)	[((votesReceived[id]>=2))]
+ 45:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:82 (state 31)	[role[id] = Leader]
+		role[0] = 3
+		role[1] = 1
+		role[2] = 1
+ 46:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:37 (state 36)	[two_leaders_same_term = (((((role[0]==Leader)&&(role[1]==Leader))&&(currentTerm[0]==currentTerm[1]))||(((role[0]==Leader)&&(role[2]==Leader))&&(currentTerm[0]==currentTerm[2])))||(((role[1]==Leader)&&(role[2]==Leader))&&(currentTerm[1]==currentTerm[2])))]
+		two_leaders_same_term = 1
+ 46:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:102 (state 39)	[attempts = (attempts+1)]
+		two_leaders_same_term = 1
+		Node(2):attempts = 1
+spin: _spin_nvr.tmp:3, Error: assertion violated
+spin: text of failed assertion: assert(!(!(!(two_leaders_same_term))))
+Never claim moves to line 3	[assert(!(!(!(two_leaders_same_term))))]
+spin: trail ends after 47 steps
+#processes: 3
+		role[0] = 3
+		role[1] = 1
+		role[2] = 1
+		currentTerm[0] = 3
+		currentTerm[1] = 3
+		currentTerm[2] = 3
+		votedFor[0] = 1
+		votedFor[1] = 1
+		votedFor[2] = 1
+		votesReceived[0] = 0
+		votesReceived[1] = 3
+		votesReceived[2] = 3
+		two_leaders_same_term = 1
+ 47:	proc  2 (Node:1) model/mini_raft_faulty_vote.pml:98 (state 43)
+		Node(2):attempts = 1
+		Node(2):id = 1
+ 47:	proc  1 (Node:1) model/mini_raft_faulty_vote.pml:100 (state 40)
+		Node(1):attempts = 0
+		Node(1):id = 0
+ 47:	proc  0 (:init::1) model/mini_raft_faulty_vote.pml:135 (state 19) <valid end state>
+		:init:(0):i = 3
+ 47:	proc  - (no_two_leaders:1) _spin_nvr.tmp:2 (state 6)
+4 processes created
