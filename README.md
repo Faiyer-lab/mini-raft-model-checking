@@ -21,11 +21,12 @@ Included:
 - majority-based leader election;
 - bounded election attempts;
 - LTL safety verification with Spin;
+- abstract leader-election model;
+- explicit message-passing leader-election model;
 - faulty voting variant with documented counterexample.
 
 Not included yet:
 
-- explicit asynchronous network channels;
 - log replication;
 - message delays and message loss;
 - crashes and recovery;
@@ -41,6 +42,7 @@ mini-raft-model-checking/
 ├── model/
 │   ├── mini_raft.pml
 │   ├── mini_raft_faulty_vote.pml
+│   ├── mini_raft_messages.pml
 │   ├── properties.md
 │   └── verification_results.md
 ├── results/
@@ -115,11 +117,17 @@ It is always false that two different nodes are leaders in the same term.
 
 Verification summary
 
-Correct model:
+Correct abstract model:
 
 file: model/mini_raft.pml;
 result: errors: 0;
 interpretation: no violation of the no-two-leaders property was found in the bounded state space.
+
+Correct message-passing model:
+
+file: model/mini_raft_messages.pml;
+result: errors: 0;
+interpretation: no violation of the no-two-leaders property was found when vote requests and vote grants are exchanged through explicit inbox channels.
 
 Faulty model:
 
@@ -143,15 +151,12 @@ Current limitations
 The current version is intentionally small. It proves only a bounded abstraction of leader-election safety, not the correctness of the full Raft protocol.
 
 Main limitations:
-
-no explicit message channels yet;
 no log replication yet;
 no timing assumptions yet;
 no crash/recovery model yet;
 no liveness verification yet;
 no C++ proof-of-concept yet.
 Planned next steps
-Add an explicit message-passing model.
 Add one-slot log replication.
 Verify a log agreement safety property.
 Explore liveness under different timing assumptions.
