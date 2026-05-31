@@ -1,0 +1,18 @@
+Scenario: nominal election and one-slot log replication
+[term 1] Node 0 becomes Candidate and votes for itself
+[term 1] Node 1 grants vote to Node 0
+[term 1] Node 2 grants vote to Node 0
+[term 1] Node 0 becomes Leader with 3 votes
+[term 1] Client request value=42 received by leader Node 0
+[term 1] Node 1 appends value=42
+[term 1] Node 2 appends value=42
+[term 1] value=42 committed by majority
+
+Cluster state:
+  Node 0 role=Leader term=1 votedFor=0 log=42 committed=true
+  Node 1 role=Follower term=1 votedFor=0 log=42 committed=true
+  Node 2 role=Follower term=1 votedFor=0 log=42 committed=true
+
+Safety checks:
+  no_two_leaders_same_term=PASS
+  committed_logs_agree=PASS

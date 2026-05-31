@@ -1,0 +1,13 @@
+Scenario: faulty voting allows repeated votes in the same term
+[term 1] Node 0 grants vote to Node 1
+[term 1] Node 1 becomes Leader
+[term 1] Node 0 grants vote to Node 2
+[term 1] Node 2 becomes Leader
+
+Cluster state:
+  Node 0 role=Follower term=1 votedFor=2 log=empty committed=false
+  Node 1 role=Leader term=1 votedFor=1 log=empty committed=false
+  Node 2 role=Leader term=1 votedFor=2 log=empty committed=false
+
+Safety checks:
+  no_two_leaders_same_term=FAIL

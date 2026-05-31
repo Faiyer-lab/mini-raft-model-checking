@@ -9,7 +9,7 @@ MODEL_LOG=model/mini_raft_log_replication.pml
 RESULTS_DIR=results
 TRACES_DIR=results/traces
 
-.PHONY: all verify-safe verify-faulty verify-messages verify-log trace-faulty clean
+.PHONY: all verify-safe verify-faulty verify-messages verify-log trace-faulty cpp cpp-run clean
 
 all: verify-safe verify-messages verify-log verify-faulty
 
@@ -45,5 +45,14 @@ trace-faulty:
 	@mkdir -p $(TRACES_DIR)
 	$(SPIN) -t -p -g -l -k mini_raft_faulty_vote.pml.trail $(MODEL_FAULTY) | tee $(TRACES_DIR)/faulty_vote_counterexample_trace_v01.txt
 
+cpp:
+	cmake -S cpp -B cpp/build
+	cmake --build cpp/build
+
+cpp-run: cpp
+	./cpp/build/mini_raft_cpp nominal
+	-./cpp/build/mini_raft_cpp faulty-vote
+
 clean:
 	rm -f pan pan.* *.trail _spin_nvr.tmp
+	rm -rf cpp/build

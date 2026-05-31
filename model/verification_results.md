@@ -159,3 +159,49 @@ Important output:
 Within the bounded message-passing abstraction of model v0.2, Spin did not find any execution in which two different nodes become leaders in the same term.
 
 This strengthens the previous result because voting is no longer represented as a direct procedure call inside the election step. Instead, vote requests and granted votes are exchanged through explicit per-node inbox channels.
+
+---
+
+## C++ proof-of-concept
+
+Directory: `cpp/`
+
+The C++ component is not used as the main verification artifact. It is a runnable sanity check that mirrors the verified abstraction.
+
+### Nominal scenario
+
+Command:
+
+`./cpp/build/mini_raft_cpp nominal`
+
+Observed behavior:
+
+- Node 0 becomes leader in term 1;
+- client value `42` is replicated to all nodes;
+- all logs contain value `42`;
+- all logs are committed;
+- `no_two_leaders_same_term=PASS`;
+- `committed_logs_agree=PASS`.
+
+Stored output:
+
+`results/cpp/nominal_scenario.txt`
+
+### Faulty voting scenario
+
+Command:
+
+`./cpp/build/mini_raft_cpp faulty-vote`
+
+Observed behavior:
+
+- Node 1 becomes leader in term 1;
+- Node 0 later grants another vote to Node 2 in the same term;
+- Node 2 also becomes leader in term 1;
+- `no_two_leaders_same_term=FAIL`.
+
+Stored output:
+
+`results/cpp/faulty_vote_scenario.txt`
+
+This mirrors the faulty Promela model and demonstrates that repeated voting can violate the leader-election safety property.
